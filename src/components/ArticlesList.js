@@ -8,6 +8,7 @@ function ArticlesList(props) {
   useEffect( () => {
     async function getArticles() {
       const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_API_KEY}`)
+      console.log(process.env.REACT_APP_API_KEY)
       const body = await res.json()
       setArticles(body.articles)
     }
